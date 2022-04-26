@@ -13,13 +13,14 @@
 
 \usepackage{lineno}
 \usepackage{siunitx}
+\usepackage{float}
 \linenumbers
 
 
-\title{Beam focus modification by cropping partially coherent x-ray beams}
+\title{Beam focus modifications by cropping partially coherent X-ray beams}
 
 
-\author[1]{Manuel Sanchez del Rio}
+\author[1*]{Manuel Sanchez del Rio}
 \author[1]{Rafael Celestre}
 \author[1]{Juan Reyes-Herrera}
 \author[1]{Philipp Brumund}
@@ -27,7 +28,7 @@
 
 \affil[1]{European Synchrotron Radiation Facility, 71 Avenue des Martyrs, 38000 Grenoble}
 
-\affil[*]{Corresponding author: email@my-email.com}
+\affil[*]{Corresponding author: srio@esrf.eu}
 
 \begin{abstract}
 We simulate the focusing of a partially-coherent beam emitted by an undulator in a fourth-generation storage ring performing coherent mode decomposition and wave optics propagation. The focus position is shifted, and its size is enlarged when an entrance slit crops the beam. This is the usual case when using an aperture to control the coherent fraction. The pairing of two lenses or transfocators to ensure a fixed focal position is analyzed. Our results show that the image of a partially coherent source, such an undulator in a low-emittance storage ring, is a non-trivial function of the aperture used to control the coherence fraction.
@@ -48,7 +49,7 @@ the overall coherent fraction is of the order of a few per cent for hard X-rays 
 
 
 
-Let us consider the case of an ideally focusing system of focal length $f$ (made by a mirror or lens that focuses the source into the image plane). The position of the focus with respect to the focusing element $q$ is given, in the framework of geometric optics, by the lens equation $f^{-1}=p^{-1}+q^{-1}$, with $p$ the source-element distance. If the numerical aperture (NA) of the beam is reduced (for example by the finite dimension of the lens or mirror, or by using a slit) the location and dimension of the focus change as a result of diffraction. It has been shown \cite{Tanaka:85} that the focal position of a Gaussian beam ``moves" towards the lens position when the NA decreases. This shifting of the focal position is relevant for synchrotron beamlines, as demonstrated by Westfall {\it et al.} \cite{westfahl}. These authors noticed a shift of the horizontal focal position upstream from the position given by geometrical optics (Fig. 7 in \cite{westfahl}) when the horizontal acceptance is reduced by a slit. 
+Let us consider the case of an ideally focusing system of focal length $f$ (made by a mirror or lens that focuses the source into the image plane). The position of the focus with respect to the focusing element $q$ is given, in the framework of geometric optics, by the lens equation $f^{-1}=p^{-1}+q^{-1}$, with $p$ the source-element distance. If the numerical aperture (NA) of the beam is reduced (for example by the finite dimension of the lens or mirror, or by using a slit) the location and dimension of the focus change as a result of diffraction. It has been shown \cite{Tanaka:85} that the focal position of a Gaussian beam ``moves" towards the lens position when the NA decreases. This shifting of the focal position is relevant for synchrotron beamlines, as demonstrated by Westfahl {\it et al.} \cite{westfahl}. These authors noticed a shift of the horizontal focal position upstream from the position given by geometrical optics (Fig. 7 in \cite{westfahl}) when the horizontal acceptance is reduced by a slit. 
 % Their numeric results from wavefront propagation using SRW \cite{codeSRW} including partial coherence agree with an analytical Gaussian Shell-model.
 
 The diffraction effect at the slits and finite size of the optical elements not only shifts the focal point, but also changes the focal dimensions. These facts must be taken into account in beamlines in fourth-generation synchrotron sources. They are critical when designing beamlines with several coupled focusing elements. We studied this phenomenon in the context of the project for the new ID18 beamline at the upgraded EBS-ESRF storage ring. This beamline will produce highly coherent beams of variable cross section at the sample position. Two refractive systems (transfocators) will be paired to allow a varying focal size, whereas a slit placed upstream from the transfocators is used to control the coherent fraction. The optical matching of the transfocators is strongly correlated to the slit aperture (or coherent fraction). The performances of such systems are calculated in the framework of the partially coherent optics using a fast algorithm for decomposition of the undulator radiation in coherent modes that are propagated along the beamline \cite{delrio2021pairing}. The simulations are separated in the horizontal and vertical planes therefore working with 1D wavefronts.
@@ -62,31 +63,31 @@ We first suppose an ideal storage ring with zero emittance, therefore producing 
 
 \begin{figure}[htbp]
 \centering
-\flushleft a) {\it zero emittance}\\ \centering
+\flushleft a) {\it with zero emittance}\\ \centering
 \includegraphics[width=0.45\textwidth]{figures/oneTF_UndSource_RectSlit_R200um.eps}
-\flushleft b) {\it horizontal}\\ \centering
+\flushleft b) {\it with EBS horizontal emittance}\\ \centering
 \includegraphics[width=0.45\textwidth]{figures/oneTF_UndSource_RectSlit_R200um_PartialCoherence_h.eps}
-\flushleft c) {\it vertical}\\ \centering
+\flushleft c) {\it with EBS vertical emittance}\\ \centering
 \includegraphics[width=0.45\textwidth]{figures/oneTF_UndSource_RectSlit_R200um_PartialCoherence_v.eps}
 
 \caption{Evolution of the size of an undulator beam cropped by a slit and focused by a lens of $R$=~\SI{0.2}{\milli\meter} 
-The plot shows the FWHM of the beam  as a function of the distance from the lens. 
-a) Zero emittance case (full coherence), here the aperture is open at $a = n \times a_\text{FWHM}$ for different values of $n$ (shown in the legend) and $a_\text{FWHM}$ = \SI{565}{\micro\meter} (the beam FWHM at the aperture plane). 
-b) finite dimensions in horizontal (values of the ESRF-EBS emittance), and
-c) finite dimensions in vertical.
-Full lines in b),c) correspond to partial coherent (multimode) beam, whereas the dashed lines correspond to the full coherent beam (first mode). The coherence fraction for each slit aperture is marked in legend.
-The focal positions given by geometrical optics are represented for the source placed wither at the ID position (yellow vertical line) or at the slit position (blue vertical line).
-The Fresnel number $N_F$ calculated at the slit plane is also marked in the legend.
+The plot shows the FWHM of the beam  as a function of the distance from the lens for different values of the aperture $a$ (in \SI{}{\micro\meter}). 
+a) zero emittance case (full coherence), 
+b) horizontal and c) vertical emittance values of the EBS-ESRF storage ring.
+Full lines in b),c) correspond to partial coherent (multimode) beam, whereas the dashed lines correspond to the full coherent beam (first mode). The coherence fraction of the transmitted beam for each slit aperture is marked in legend.
+In a) the focal positions given by geometrical optics are represented when the source is considered at the undulator position (yellow vertical line) or at the slit position (blue vertical line). The Fresnel number $N_F$ calculated at the slit plane is also marked in the legend in a) and the $CF$ in b). Slit transmittivity $T$ is also noted in the legend.
 }
 \label{fig:oneTFund}
 \end{figure}
 
-Fig.~\ref{fig:oneTFund}a shows the evolution of the coherent beam size after being focused by the lens. It also shows markers for the focal positions predicted by the lens equation:  $q=$~\SI{18.417}{\meter} considering the source at the undulator position and $q_a=$~\SI{28.408}{\meter} if one considers the slit as an effective source. As expected, the beam waist calculated numerically converge to these values when the slit is opened ($T = 1$) and almost closed ($T \le 0.5$), respectively. For intermediate values of $a$, the beam waist ``moves". For $T=$0.93 (Fresnel number $N_F=$35) the cropping by the slit is negligible so situation does not change with respect the open slit because. For $T=0.56$ ($N_F=8.7$, brown line) the waist presents a flat depression, increasing its minumum FWHM and also the depth of focus. For smaller values of $T$ and $N_F$ the minimum shifts to higher distances (e.g., $n=0.1$ red line) and becomes less pronounced. For $n$ = 0.05 (green line), a small beam size is found again close to the $q_a$ position, but it presents a twin minimum due to the interference fringes found in the intensity distributions. Both minima converge to a the $q_a$ position for $n\le$~0.01 (orange line). 
-When the focal distance of the lens is reduced (using lenses with smaller radius, or piling several lenses), the $q$ and $q_a$ positions shift to shorter distances, and  $|q-q_a|$ also reduces. They converge to a single position: the lens focal length $q=q_a=f$. This happens when both source-lens and slit-lens distances can be considered at infinite. 
+Fig.~\ref{fig:oneTFund}a shows the evolution of the coherent beam size after being focused by the lens. It also shows markers for the focal positions predicted by the lens equation:  $q=$~\SI{18.417}{\meter} considering the source at the undulator position and $q_a=$~\SI{28.408}{\meter} if one considers the slit as an effective source. As expected, the beam waist calculated numerically converge to these values when the slit is opened ($T = 1$) and almost closed ($T \le 0.5$), respectively. For intermediate values of $a$, the beam waist ``moves". For $T=$0.93 (Fresnel number $N_F=$35) the cropping by the slit is negligible so situation does not change with respect the open slit because. For $T=0.56$ ($N_F=8.7$, brown line) the waist presents a flat depression, increasing its minumum FWHM and also the depth of focus. For smaller values of $T$ and $N_F$ the minimum shifts to higher distances (e.g., $n=0.1$ red line) and becomes less pronounced. The waist moves to higher distances when $T$ decreases. A small FWHM is found close to the $q_a$ position for $T$ = 0.05 (green line), showing a twin minimum due to the interference fringes found in the intensity distributions. Both minima converge to a the $q_a$ position for $T\le$~0.01 (orange line). 
+The numeric values of the FWHM agree with those calculated using geometrical concepts only for the limiting cases of waist at $q$ and $q_a$. 
+% For the waist at $q$, the beam size is the source size times its magnification (ratio between lens-waist distance and lens-source distance). Similarly, for the waist at $q_a$, the beam size is the slit aperture times the magnification (now computed as the ratio between lens-waist distance and slit-lens distance). This has been verified numerically (not shown). 
+However, for intermediate slit apertures, where the waist position is in between $q$ and $q_a$, the waist size is different to that predicted by geometric optics, and significatively higher that the limiting values at $q$ and $q_a$, showing the envelope in Fig.~\ref{fig:oneTFund}a (dashed black line).
+% Indeed, it can be observed in Fig.~\ref{fig:oneTFund} that for these intermediate slit apertures that crop the beam, the waist size is larger than those found at limiting positions $p$ and $p_a$.
+This is an important fact: A good focusing, i.e., a very small beam size is only obtained in the limiting cases of open slit and almost-closed slit. This means that for a fully coherent beam, the slit worsens the focusing. The diffraction at the slit creates a spurious divergence that affects the lens power. 
 
-The dimension of the waist can be calculated using geometrical concepts only for the limiting cases of waist at $q$ and $q_a$. For the waist at $q$, the beam size is the source size times its magnification (ratio between lens-waist distance and lens-source distance). Similarly, for the waist at $q_a$, the beam size is the slit aperture times the magnification (now computed as the ratio between lens-waist distance and slit-lens distance). This has been verified numerically (not shown). However, for intermediate slit apertures, where the waist position is in between $q$ and $q_a$, the waist size is different to that predicted by geometric optics.
-Indeed, it can be observed in Fig.~\ref{fig:oneTFund} that for these intermediate slit apertures that crop the beam, the waist size is larger than those found at limiting positions $p$ and $p_a$.
-This is an important fact: A good focusing, i.e., a very small beam size is only obtained in the limiting cases of open slit and almost-closed slit. This means that for a fully coherent beam, the slit disturbs the focusing and should be avoided. The diffraction at the slit creates an an spurious divergence that affects the lens power. 
+When the focal distance of the lens is reduced (using lenses with smaller radius, or piling several lenses), the $q$ and $q_a$ positions shift to shorter distances, and become closer one to another ($|q-q_a|$ also reduces). They converge to a single position: the lens focal length $q=q_a=f$. This happens when both source-lens and slit-lens distances can be considered at infinite. 
 
 % \subsubsection{Partial coherence} The mission of the slit is to improve beam coherence (increase coherent fraction). For usual photon energies (5-25~keV)  the slit must be almost closed to gain coherence in old storage rings like ESRF-1 ($CF<10^{-3}$), thus forming a secondary source. For storage rings like EBS, with $CF > 10^{-2}$, the selection of the slit aperture $a$ is crucial: the slit must be closed until the the desired $CF$ is obtained, but not more, because it not only reduces intensity but also deteriorates the focusing. 
 
@@ -100,7 +101,7 @@ $\beta_x=~\SI{6.8}{\meter}$,
 $\beta_y=~\SI{2.8}{\meter}$
 }
 to perform the coherent mode decomposition of the undulator source.
-This is done for the horizontal and vertical directions, resulting coherent fractions (at 7 keV) of $CF_h=$13\% and $CF_v=$58\%, for the horizontal and vertical directions. These values are much higher than for the old ESRF-1 source, but still low to justify approximating the beam by a coherent beam. Therefore, we propagated a number of modes large enough to contain more than 99\% of the source intensity (36 modes in H and 8 in V). The illumination at the entrance slit plane is \SI{610}{\micro\meter} in H times \SI{566}{\micro\meter} in V. The slit aperture is used to tune the coherence of the beam: closing the slit increases the $CF$. In the limit (zero aperture) the beam after the slit is fully coherent ($CF=1$), but obviously with zero intensity. The choice of the right slit aperture comes from a compromise between coherence and flux. 
+This is done for the horizontal and vertical directions, resulting coherent fractions (at 7 keV) $CF_h=$13\% and $CF_v=$58\%, respectively. These values are much higher than for the old ESRF-1 source, but still low to apply full-coherence approximation. Therefore, we propagated a number of modes large enough to contain more than 99\% of the source intensity (36 modes in H and 8 in V). The illumination at the entrance slit plane is \SI{610}{\micro\meter} (H) $\times$ \SI{566}{\micro\meter} (V). The slit aperture is effectively used to tune the coherence of the beam: closing the slit increases the $CF$. In the limit (zero aperture) the beam after the slit is fully coherent ($CF=1$), but obviously with zero transmittivity ($T$=0). The choice of the right slit aperture comes from a compromise between coherence and flux.  
 % Figure~\ref{fig:oneTFund} shows the $CF$ after of the H and V 1D beams after the slit for different slit apertures. From this figure we select the apertures to be used in the following simulations. We selected a photon energy of \SI{7}{keV}. A first value of $CF_h=CF_v=$ 90\% in both horizontal and vertical (thus with a combined 2D  $CF=CF_h CF_v=$ 81\%) is obtained with slit apertures of
 % $a_h$ =~\SI{40.3}{\micro\meter}, and 
 % $a_v$ =~\SI{227}{\micro\meter} (horizontal and vertical, respectively). A second value of  $CF_h=CF_v=$ 70\% (thus 2D $CF$ of about 50\%), corresponds to 
@@ -119,100 +120,142 @@ This is done for the horizontal and vertical directions, resulting coherent frac
 %     }
 % \end{figure}
 
-Figure~\ref{fig:oneTFund}b,c shows the focal size along the optical axis for these apertures in the horizontal and vertical planes. We calculated the case of the partially coherent beam (multi-mode, solid lines) and also the case of a fully coherent beam (only the first coherent mode, dashed lines). We observe that the focal positions (the minima of the plot lines) do not change significantly when passing from full to partial coherence. However, the focal dimension changes significantly in the horizontal direction for cases with $CF_h\le$ 70\%. In the vertical, where the beam at the source was more coherent there is no differences in sizes when going from full (dashed lines) to partial coherence (solid lines). Looking to the focal position shift versus slit aperture we find important differences in the horizontal and vertical. The cropping of the beam by the slit is important in horizontal as we need to increase the $CF_h$ from the source (13\%) to values required by the experiments, usually larger than 50\%. This produces a gradual shift of the focal position from the position of the geometrical image of the ID source (black line in panel a)) to the geometrical image of the slit (red line in panel a)). However, in the vertical plane, the slit crops the beam only slightly, and closing the slit to go from the source $CF_v$ = 58\% to values up to 90\% does not produce any focal shift from the position of the geometrical image of the ID source. Only when the slit is very closed (e.g., $a_v$ =~\SI{25}{\micro\meter}, red curve) the focal position shifts to the geometrical image of the slit. This case is in principle not interesting experimentally as it reduces the intensity from an already quite coherent beam ($CF_v$~= 90\%). 
+Figures~\ref{fig:oneTFund}b and c show the focal size along the optical axis for these apertures in the horizontal and vertical planes. We calculated the case of the partially coherent beam (multi-mode, solid lines) and also the case of a fully coherent beam (only the first coherent mode, dashed lines). We observe that the focal positions (the minima of the plot lines) do not change significantly when passing from full to partial coherence. However, the focal dimension changes significantly in the horizontal direction for cases with $CF_h\le$ 70\%. In the vertical, where the beam at the source was more coherent there is no differences in sizes when going from full (dashed lines) to partial coherence (solid lines). Looking to the focal position shift versus slit aperture we find important differences in the horizontal and vertical. The cropping of the beam by the slit is important in horizontal as we need to increase the $CF_h$ from the source (13\%) to values required by the experiments, usually larger than 50\%. This produces a gradual shift of the focal position from the position of the geometrical image of the undulator source (black line in panel a)) to the geometrical image of the slit (red line in panel a)). However, in the vertical plane, the slit crops the beam only slightly, and closing the slit to go from the source $CF_v$ = 58\% to values up to 90\% does not produce any focal shift from the position of the geometrical image of the undulator source. Only when the slit is very closed (e.g., $a_v$ =~\SI{25}{\micro\meter}, red curve) the focal position shifts to the geometrical image of the slit. This case is in principle not interesting experimentally as it reduces the intensity from an already quite coherent beam ($CF_v$~= 90\%).
+In summary, for practical values of aperture selected to increase the beam $CF$ to values ~90\% the behaviour in V and H is different: the better source coherence in V permits working with quite open slits then the system ``sees" the source at the undulator position, whereas in H one needs a significant crop of the beam thus shifting and enlarging the beam waist. Notice that the good coherence of the beams emitted by the EBS-ESRF and other 4$^{\text{th}}$ generation storage permits performing coherence experiments with a ``conservative" use of slit (open in V and partially close in H). On the contrary, these experiments at 3$^{\text{rd}}$ generation sources require a ``extreme" closing of the slits to a pin-hole size.      
 
+\section{Focal lengths and sizes for paired lenses}
 
-\section{Focal sizes for two paired lenses}
-
-We study here an optical system composed by two lenses (lens-1 with focal length $f_1$ and lens-2 with $f_2$) separated by a distance $D$. Following \citeasnoun{Goodman85}, the relationship between object-to-lens-1 distance $p_1$ and the lens-2-to-image distance $q_2$ is
+Consider an ideal optical system composed by two lenses ($f_1$ is the focal length for lens-1 and $f_2$ for lens-2), separated by a distance $D$. Following \cite{Goodman85}, the relationship between object-to-lens-1 distance $p_1$ and the lens-2-to-image distance $q_2$ given by the geometrical optics is
 \begin{equation}
 \label{eq:twolens}
-    D-(f_1+f_2)=\frac{f_1^2}{p_1-f_1} + \frac{f_2^2}{q_2-f_2}.
+    D-(f_1+f_2)=\frac{f_1^2}{p_1-f_1} + \frac{f_2^2}{q_2-f_2},
 \end{equation}
-
-The global magnification is the product of the magnification of the individual lenses. It can be written as
+which corresponds to an hyperbola
+\footnote{Expanding eq.~\ref{eq:twolens} one gets $x(D q_2 + p_1 q_2) + y (D p_1 + p_1 q_2) - x y (D + p1 + q_2) = D p_1 q_2$,  with horizontal asymptote at $f_{2}=((p_1+D)^{-1}+q_2^{-1})^{-1}$ and vertical asymptote at $f_{1}=(p_1^{-1}+D^{-1})^{-1}$} in the ($f_1,f_2$) plane.
+The global magnification is the product of the magnification of the individual lenses.
 \begin{equation}
 \label{eq:magnification}
     M=M_1 M_2=\frac{1-q_2/f_2}{1-p_1/f_1}.
 \end{equation}
+The magnification is not dependent on $D$, however the length of the optical system $L=p_1+D+q_2$ will change if one changes the focal distances of the lenses. For a constant $L$ one can change magnification by changing the inter-lenses distance $D$ (zoom effect). In a synchrotron beamline, the transfocators allow changing the magnification by varying their focal lengths (by adding or removing lenses) \cite{Vaughan:kv5084}.
 
-The magnification is not dependent on $D$, however the length of the optical system $L=p_1+D+q_2$ will change if one changes the focal distances of the lenses. For a constant $L$ one can change magnification by changing the inter-lenses distance $D$ (zoom effect). In a synchrotron beamline using transfocators, the magnification can be changed by varying the focal lengths of the transfocators (by adding or removing individual or group of lenses in the transfocator) \cite{Vaughan:kv5084}.
 
-We analyze the optical design of a focusing system that uses two transfocators, and how to configure it for the desired focal size or magnification. 
-
-\begin{table}[]
+\begin{table}[h]
+    \caption{
     \label{table:id18parameters}
-    \caption{Position of the two transfocators, slit and sample (focal point) corresponding to the ID18 beamline configuration under study. }
+    Position of the two transfocators, slit observation plane corresponding to the ID18 beamline configuration under study. }
     \centering
     \begin{tabular}{l|c|c}
          element & position [m] & comment\\
-         ID (undulator) source& 0 & U18 $N_u$~=~138 $K$~=~1.851 (7 keV)\\
+         U18 undulator& 0 & $N_u$~=~138 $K$~=~1.851 (7 keV)\\
          Slit & 36 &
-         variable aperture $a_h\times a_v$
+         aperture $a_h\times a_v$
          \\
-         Transfocator 2D & 65 & 
-         %$f_H=58.7; f_V=54.3$ 
-         \\
-         Transfocator 2D & 170 & $D$~=~\SI{105}{\meter} \\
-        %  Transfocator 2D & 170 & position 1 {\bf FO1}, $D$=~\SI{105}{\meter} \\
-        %  Transfocator 2D & 192 & position 2 {\bf FO2}, $D$=~\SI{127}{\meter}  \\
-         sample & 200 & focal plane
+         Transfocator 2D & 65 & Be lenses $p_1$=\SI{65}{\meter}
+         \\ 
+         Transfocator 2D & 170 & Be lenses;  $D$~=~\SI{105}{\meter} \\
+         sample & 200 & focal plane $q_2$ = \SI{30}{m}
     \end{tabular}
 \end{table}
 
-\begin{figure}\label{fig:analytical}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[H]
     \centering
-
-    \includegraphics[width=0.25\textwidth]{figures/f1f2_analytical.eps}
-    \includegraphics[width=0.25\textwidth]{figures/magnification_analytical.eps}
-    \includegraphics[width=0.25\textwidth]{figures/sizes_analytical.eps}
-
-    \caption{a) Analytical trajectories $(f_1,f_2)$ for $D$~= \SI{105}{\meter} calculated numerically [equation~(\ref{eq:twolens})] for a given value of apertures.
-    b) 
-    Analytical magnification \todo{$|M|$!!} calculated using equation~(\ref{eq:magnification}).
-    c) 
-    Analytical size values (magnification times source or slit size).
-    The source is placed either at $p_1$~= \SI{65}{\meter} (source at the ID position) or $p_1$~= \SI{29}{\meter} (source at slit position). Note that cases with $f_2<0$ are not plotted as defocusing (concave) lenses are not available. 
+    a)~~~~~~~~~~~~~~~~~~~~~~~~~~~~~b) \\
+    \includegraphics[width=0.21\textwidth]{figures/H_3.png}
+    \includegraphics[width=0.21\textwidth]{figures/V_3.png}
+    \includegraphics[width=0.21\textwidth]{figures/H_2.png}
+    \includegraphics[width=0.21\textwidth]{figures/V_2.png}    
+    \includegraphics[width=0.21\textwidth]{figures/H_1.png}
+    \includegraphics[width=0.21\textwidth]{figures/V_1.png}
+    \includegraphics[width=0.21\textwidth]{figures/H_0.png}
+    \includegraphics[width=0.21\textwidth]{figures/V_0.png}
+    \caption{
+        \label{fig:f1f2map}
+    Maps of beam peak intensity in horizontal plane (column a) and vertical plane (b) at the sample position obtained by two lenses of variable focal lengths ($f_1$,$f_2$).
+    Slit values (in \SI{}{\micro\meter}) are are $a_h$=[1000, 145.5, 85.1, 40.3] (a) and $a_v$=[1500, 506.7, 227.0, 25] (b), corresponding to transmitted coherence fraction
+    $CF_h$=[0.13, 0.5, 0.7, 0.9] and
+    $CF_v$=[0.58, 0.7, 0.9, 0.999], respectively.
+    The analytical trajectories from geometric optics (Eq.~\ref{eq:twolens}) are over-plotted in white (dotted if source is at the undulator, and dashed if source is at the slit). We represented in red dots some optimum pairs ($f_1,f_2$) that guarantees that the beam waist is at the focal plane.
     }
 \end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+An optical system with two paired transfocators is used to get a variable magnification (variable focal size) in a fixed location (the sample position). We represented the two transfocators by two real beryllium lenses of variable curvature radius $R_1$ and $R_2$ that correspond to focal distances $f_1$ and $f_2$ ($f=R/(2 \delta)$, with $\delta=$~6.96 10$^{-6}$ for Be at \SI{7}{keV}). A slit of aperture $a_h$ in H and $a_v$ in V is placed upstream the lens-1. The positions of the lenses, determined by room constraints, are fixed (although different values could be studied). Distances (see Table~\ref{table:id18parameters}) match the requirements of the EBS-ESRF ID18 beamline, working at a photon energy of \SI{7}{keV}.
+
+For a given value of $f_1$ and the the fixed distances ($p_1$, $D$ and $q_2$ in Table~\ref{table:id18parameters}), $f_2$ can be calculated analytically (equation~(\ref{eq:twolens})). The trajectory pairs ($f_1,f_2$) obtained in this way  
+% (Fig.~\ref{fig:analytical_f1f2}) 
+guarantees that the focus is at the sample position ($L$= \SI{200}{\meter} from source). However, as shown in the previous section, these results of the geometrical optics are not exact when partially coherent beams are cropped by a slit. 
+Figure~\ref{fig:f1f2map} shows the results of the numerical search of the $f_2$ to produce the waist at the sample plane. It is obtained by performing a map of the on-axis intensity $\mathcal{I}_0$ of the beam at the sample plane versus $(f_1,f_2)$. Each pixel corresponds to a simulation to compute the pattern at the image plane, considering partial coherence, i.e., propagating many coherent modes. For a given $f_1$ value, one can select the $f_2$ value that produces the best focus at the sample position (picking the maximum of $\mathcal{I}_0(f_2)$, which also corresponds to the minimum FWHM). 
+The $\mathcal{I}_0(f_1,f_2)$ maps depend strongly on the slit aperture. In the horizontal, the low $CF_h$ of the source (13\%) is strongly increased when the the slit is being closed, producing appreciable displacement of the pattern in Figs.~\ref{fig:f1f2map}a, thus requiring a fine tuning of $f_2$ to keep the beam focused at the sample plane. In vertical, the source is more coherent ($CF_v$~=~58\%) therefore when the slit improves crops the beam and enhances the $CF_v$ there is not much shifting of the patterns up to $CF_v$~ 90\%. However, when the slit almost closed ($a_v$~=~\SI{25}{\micro\meter}), that is, acting as a pinhole the patterns approach the ($f_1,f_2$) trajectories resulting from the geometrical optics considering the source at the slit position.
+
+
+% following the geometrical optics
+
+
+% and its corresponding magnification $M$ in the framework of geometrical optics. Taking $f_1$ as variable parameter,  
+% Fig.~\ref{fig:analytical}a shows the trajectories of $f_2$ as a function of a variable $f_1$. In this plot we eliminated possible values of $f_2<0$ that correspond to the second divergent (defocusing) lens, an option not available in a typical transfocator.  
+% The choice of one pair $(f_1,f_2)$ from these curves  Fig.~\ref{fig:analytical}b shows the theoretical magnification $|M|$ and the theoretical image sizes are in Fig.~\ref{fig:analytical}c. 
+
+
+% \begin{figure}\label{fig:f1f2map}
+%     \centering
+
+%     \includegraphics[width=0.25\textwidth]{figures/f1f2_h.eps}
+%     \includegraphics[width=0.25\textwidth]{figures/f1f2_v.eps}
+
+%     \caption{Trajectories $(f_1,f_2)$ for $D$~= \SI{105}{\meter} calculated numerically for different values of apertures. Panel a) is for the horizontal direction and panel b) for the vertical. 
+%     Analytical values displayed are obtained using equation~(\ref{eq:twolens}) with $p_1$~= \SI{65}{\meter} (object at source position) (solid lines) or $p_1$~= \SI{29}{\meter} (object at slit position) (dashed lines).
+%     }
+% \end{figure}
 
 
 
-\begin{figure}\label{fig:f1f2map}
-    \centering
 
-    \includegraphics[width=0.25\textwidth]{figures/f1f2_h.eps}
-    \includegraphics[width=0.25\textwidth]{figures/f1f2_v.eps}
+Figure~\ref{fig:focalSizes} shows the calculated focal sizes. Analytical values (dashed lines), based on geometrical optics (equation~(\ref{eq:magnification})) are close to numeric values of beam sizes for the limiting cases of open slit (source at the undulator) or almost-closed slit (source at the slit). For other useful cases where the slit crops partially the beam, the numerically calculated values should be used. Here, the focal sizes cannot be predicted by geometrical optics (also seen in Fig.~\ref{fig:oneTFund}a), and cannot be simply interpolated from the sizes corresponding to the limiting slit openings. The size values calculated analytically have very limited applicability for practical cases were the beam is partially cropped by the slit. 
 
-    \caption{Trajectories $(f_1,f_2)$ for $D$~= \SI{105}{\meter} calculated numerically for different values of apertures. Panel a) is for the horizontal direction and panel b) for the vertical. 
-    Analytical values displayed are obtained using equation~(\ref{eq:twolens}) with $p_1$~= \SI{65}{\meter} (object at source position) (solid lines) or $p_1$~= \SI{29}{\meter} (object at slit position) (dashed lines).
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[H]
+a)\\
+    % \centering
+    \includegraphics[width=0.35\textwidth]{figures/sizes_h.eps}\\
+b)\\
+    \includegraphics[width=0.35\textwidth]{figures/sizes_v.eps}
+
+    \caption{
+    \label{fig:focalSizes}
+    Size of the image in a) horizontal and b) vertical planes for different slit apertures.
     }
 \end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-The two transfocators in use are idealized as two real beryllium lenses of variable curvature radius $R_1$ and $R_2$ that correspond to focal distances $f_1$ and $f_2$ ($f=R/(2 \delta)$, with $\delta=$~6.96 10$^{-6}$ for Be at \SI{7}{keV}). A slit of aperture $a_h$ in horizontal and $a_v$ in vertical is placed upstream the lens-1. The positions of the elements is determined by room constraints and are considered fixed (although different values could be studied). We set the distances matching the requirements of the EBS-ESRF ID18 beamline (see Table~\ref{table:id18parameters}), and we analyzed the system at a photon energy of \SI{7}{keV}. We study the variation of the spot size as a function of the focal distances. The final goal is to get the desired focal size by selecting the configuration of the transfocators (the focal length and the particular combination of lenses to approach it). 
-
-For fixed distances $p_1$, $D$ and $q_2$, and also a given value of $f_1$, one can calculate analytically $f_2$ using  equation~(\ref{eq:twolens}) and the corresponding magnification $M$ in the framework of geometrical optics. Taking $f_1$ as variable parameter,  
-Fig.~\ref{fig:analytical}a shows the trajectories of $f_2$ as a function of a variable $f_1$. In this plot we eliminated possible values of $f_2<0$ that correspond to the second divergent (defocusing) lens, an option not available in a typical transfocator.  
-The choice of one pair $(f_1,f_2)$ from these curves guarantees that the focus is at the sample position ($L=p_1+D+q_2$~= \SI{200}{\meter} from source). Fig.~\ref{fig:analytical}b shows the theoretical magnification $|M|$ and the theoretical image sizes are in Fig.~\ref{fig:analytical}c. 
-
-Figure~\ref{fig:f1f2map} shows the value of the $(f_1,f_2)$ map calculated numerically. For each $F_1$ value, we can select from the map $f_2$ value that produces the best focus (which has a minimum FWHM or a maximum peak intensity). 
-
-The $(f_1,f_2)$ curves depend strongly on the slit aperture in the horizontal, because of the low $CF_h$ of the source (12\%) is highly increased by the slit. In the vertical the source is more coherent ($CF_v$~=~58\%) therefore the slit improves the $CF_v$  and there is not much change in the trajectories up to values of 90\%. However, in the case of a slit with $a_v$~=~\SI{25}{\micro\meter} that is acting as a pinhole the trajectories (red line) approach the results of the geometrical optics considering the source at the slit position.
-
-Figure~\ref{fig:focalSizes} shows the calculated focal sizes. Analytical values (dashed and dotted lines), based on geometrical optics, use  equation~(\ref{eq:magnification}). They do not reproduce correctly values of beam sizes calculated numerically with wave optics. It can be concluded that the analytical values have very limited applicability, at least in the configurations studied.
 In the horizontal direction, for slit apertures $a_h>$~\SI{40}{\micro\meter} the sizes change considerably for small changes in $a_h$. The focusing characteristics of the system depends highly on the diffraction effects produced at the slit. For the slit $a_h$~=~\SI{40.3}{\micro\meter} ($CF_h=$~90\%) the focal size can vary from roughly 10 to 50 microns.  In vertical the focal size can be changed from 5 to 100 \SI{}{\micro\meter} at at $CF_v=$~90\%.
 
-\begin{figure}
-    \centering
+In summary, it is shown that a slit that crops a partially coherent X-ray beam induces diffraction effect in the beam originating an appreciable change in the focal characteristics (position and dimensions). In the case that two (or more) focusing elements are used, the basic concepts from geometric optics are insufficient to predict the conditions to pair them (define the focal lengths) for creating a focus in a precise position. Numeric methods for partially coherent optics based on coherent mode decomposition and wavefront propagation (as described in \cite{delrio2021pairing}) are used to predict the focal lengths of the focusing elements and the resulting image size.   
+% \begin{figure}
+%     \centering
+%     \includegraphics[width=0.45\textwidth]{figures/f1f2_analytical.eps}
+%     \includegraphics[width=0.45\textwidth]{figures/magnification_analytical.eps}
+%     \includegraphics[width=0.45\textwidth]{figures/sizes_analytical.eps}
 
-    \includegraphics[width=0.25\textwidth]{figures/sizes_h.eps}
-    \includegraphics[width=0.25\textwidth]{figures/sizes_v.eps}
-        
-    \caption{Focal sizes obtained by a two transfocator system as a function of focal length of lens-1 $f_1$. The focal length $f_2$ of the second lens is obtained from the trajectories in Fig.~\ref{fig:f1f2map}. 
-    Analytical values are obtained using equation~(\ref{eq:magnification}) with $p_1$~= \SI{65}{\meter} (object at source position) (solid lines) or $p_1$~= \SI{29}{\meter} (object at slit position) (dashed lines). 
-    }
-    \label{fig:focalSizes}
-\end{figure}
+%     \caption{
+%     \label{fig:focalSizes}
+%     a) Analytical trajectories $(f_1,f_2)$ for $D$~= \SI{105}{\meter} calculated numerically [equation~(\ref{eq:twolens})] for a given value of apertures.
+%     b) 
+%     Analytical magnification $|M|$ calculated using equation~(\ref{eq:magnification}).
+%     c) 
+%     Analytical size values (magnification times source or slit size).
+%     The source is placed either at $p_1$~= \SI{65}{\meter} (source at the ID position) or $p_1$~= \SI{29}{\meter} (source at slit position). Note that cases with $f_2<0$ are not plotted as defocusing (concave) lenses are not available. 
+%     }
+% \end{figure}
+
+
 
 
 % Do not place figures and tables at the back of the manuscript. Figures and tables should be placed and sized as they are likely to appear in the final article. 
