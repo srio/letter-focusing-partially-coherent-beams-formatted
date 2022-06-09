@@ -70,7 +70,7 @@
 
 % Copyright statement
 \RequirePackage{textcomp} % For copyright symbol styling
-\newcommand{\copyrightstatement}{\, \textcopyright\, \the\year{} Optica Publishing Group}
+\newcommand{\copyrightstatement}{\, \textcopyright\, \the\year{} European Synchrotron Radiation Facility}
 
 % Graphics, tables and other formatting
 \RequirePackage{graphicx,xcolor}
@@ -284,7 +284,7 @@ THE ABSTRACT\vskip12pt}\let\go\relax\fi
 % Creating a new bibliography
 \RequirePackage[resetlabels]{multibib}
 \newcites{fullrefs}{Full References}  %% Or whatever the heading might be
-\bibliographystylefullrefs{osajnl}    %% The full style
+%srio \bibliographystylefullrefs{osajnl}    %% The full style
 
 % Patching \cite to automatically add cite
 % to fullrefs list
@@ -340,7 +340,8 @@ THE ABSTRACT\vskip12pt}\let\go\relax\fi
 \setboolean{shortarticle}{false}
 \setboolean{displaycopyright}{true}
 \dates{Compiled \today}
-\doi{\url{http://dx.doi.org/10.1364/ao.XX.XXXXXX}}
+% \doi{\url{http://dx.doi.org/XXXXXX}}
+\doi{\url{}}
 
 %% v1.12: Backmatter sections use a smaller font size
 %% with \bmsection run-in headings
