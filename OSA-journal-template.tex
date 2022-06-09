@@ -14,6 +14,8 @@
 \usepackage{lineno}
 \usepackage{siunitx}
 \usepackage{float}
+\usepackage{lipsum}
+
 \linenumbers
 
 
@@ -56,8 +58,8 @@ Let us consider an aperture of dimension $a$ placed between the source and a foc
 
 We first suppose an ideal storage ring with zero emittance, therefore producing a fully coherent emission. The beam at the slit plane has a full-width at half-maximum (FWHM) $a_\text{FWHM}=\SI{565}{\micro\meter}$. The aperture $a$ takes different values from fully opening (the whole beam passes the slit therefore the transmittivity is $T=1$) to a very narrow aperture ($T << 1$). The refracted beam is analyzed at different positions from the lens by calculating the FWHM of the intensity distribution. At the beam waist the FWHM presents a minimum. 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[htbp]
-% \centering
 \hspace*{-1.0cm}
 \includegraphics[width=0.575\textwidth]{figures/evolution.eps}
 \caption{Evolution of the size of an undulator beam cropped by a slit and focused by a lens of $R$=\SI{0.2}{\milli\meter}.
@@ -69,6 +71,7 @@ Full lines in b), c) correspond to partial coherent (multi-mode) beam, whereas t
 }
 \label{fig:oneTFund}
 \end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 Fig.~\ref{fig:oneTFund}a shows the evolution of the coherent beam size after being focused by the lens. It also shows markers for the focal positions predicted by the lens equation:  $q$=\SI{18.417}{\meter} considering the source at the undulator position (blue line) and $q_a$=\SI{28.408}{\meter} if one considers the slit as an effective source (orange line). As expected, the beam waist calculated numerically converge to these respective values when the slit is opened ($T$=1, Fresnel number $N_F$=78, grey line) and almost closed ($T\approx 0$, blue line). For intermediate values of $a$, the beam waist ``moves" from one case to another. For $T$=0.93 ($N_F$=35, magenta line) the cropping by the slit is negligible so situation does not change with respect the open slit. For $T$=0.56 ($N_F$=8.7, brown line) the waist presents a flat depression, increasing its minimum FWHM and also the depth of focus. Smaller values of $T$ and $N_F$ shift the minimum to higher distances (e.g., $T$=0.12, $N_F$=0.3,  red line) and the minima become less pronounced. A small FWHM is found close to $q_a$ (orange marker) for $T$=0.05 ($N_F$=0.09, green line), showing a twin minimum due to the interference fringes found in the intensity distributions. Both minima converge to this position for $T$=0.01 ($N_F$=0.003, orange line), and $T$=0.003$\approx 0$ ($N_F$=0.0009, blue line). 
 The numeric values of the FWHM agree with those calculated using geometrical concepts only for the limiting cases of waist at $q$ and $q_a$. 
